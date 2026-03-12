@@ -1,0 +1,37 @@
+{
+  "name": "restaurant-api",
+  "version": "1.0.0",
+  "description": "API para um restaurante, permitindo a gestão de mesas, pedidos e cardápio.",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjbarbosadev/restaurant-api.git"
+  },
+  "keywords": [
+    "restaurant",
+    "api",
+    "nodejs",
+    "express",
+    "management"
+  ],
+  "author": "Thiago Barbosa",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/tjbarbosadev/restaurant-api/issues"
+  },
+  "homepage": "https://github.com/tjbarbosadev/restaurant-api#readme",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.5.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
