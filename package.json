@@ -4,7 +4,10 @@
   "description": "API para um restaurante, permitindo a gestão de mesas, pedidos e cardápio.",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts"
+    "dev": "tsx watch src/server.ts",
+    "knex": "node --import tsx ./node_modules/.bin/knex",
+    "knex:migrate": "npm run knex -- migrate:latest",
+    "knex:migrate:make": "npm run knex -- migrate:make"
   },
   "repository": {
     "type": "git",
@@ -26,7 +29,9 @@
   "homepage": "https://github.com/tjbarbosadev/restaurant-api#readme",
   "dependencies": {
     "dotenv": "^17.3.1",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "knex": "^3.1.0",
+    "sqlite3": "^6.0.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
