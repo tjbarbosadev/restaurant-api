@@ -1,4 +1,3 @@
-import { ProductRepository } from '@/database/types/ProductRepository';
 import { productSchema } from '@/schema/product';
 import { knex } from '@/database/knex';
 import { Request, Response, NextFunction } from 'express';
