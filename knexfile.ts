@@ -1,5 +1,3 @@
-import { after } from 'node:test';
-
 export default {
   client: 'sqlite3',
   connection: {
