@@ -6,10 +6,9 @@ import z from 'zod';
 class TableSessionController {
   async index(req: Request, res: Response, next: NextFunction) {
     try {
-      const sessions = await knex<TableSessionRepository>('table_session').orderBy(
-        'closed_at',
-        'desc',
-      );
+      const sessions = await knex<TableSessionRepository>('table_session')
+        .where({ closed_at: null })
+        .orderBy('opened_at', 'desc');
 
       res.json(sessions);
     } catch (error) {

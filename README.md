@@ -2,6 +2,47 @@
 
 API de restaurante para estudos — Node.js, Express, TypeScript, Knex, SQLite.
 
+## Esquema de tabelas
+
+```mermaid
+erDiagram
+    products {
+        int id PK
+        text name
+        decimal price
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    tables {
+        int id PK
+        int table_number
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    table_session {
+        int id PK
+        int table_id FK
+        timestamp opened_at
+        timestamp closed_at
+    }
+
+    orders {
+        int id PK
+        int table_session_id FK
+        int product_id FK
+        int quantity
+        decimal price
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    tables ||--o{ table_session : "tem sessões"
+    table_session ||--o{ orders : "tem pedidos"
+    products ||--o{ orders : "é pedido em"
+```
+
 ## Guia de comandos Knex
 
 ### Migrations
@@ -23,9 +64,10 @@ Migrations controlam a **estrutura** do banco (criar/alterar/remover tabelas). O
 npm run knex -- migrate:make create-products
 npm run knex -- migrate:make create-tables
 npm run knex -- migrate:make table-session
+npm run knex -- migrate:make creat-orders
 ```
 
-Tabelas: `products`, `tables`, `table_sessions`.
+Tabelas: `products`, `tables`, `table_sessions`, `orders`.
 
 Para rodar todas as pendentes:
 
